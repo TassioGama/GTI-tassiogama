@@ -1,0 +1,9 @@
+inherited FormCadastroPessoa1: TFormCadastroPessoa1
+  Caption = 'FormCadastroPessoa1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Label3: TLabel
+    Width = 19
+    ExplicitWidth = 19
+  end
+end

@@ -1,0 +1,26 @@
+unit UnitCadastroFuncionario;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitCadastroPessoa, REST.Types,
+  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls,
+  Vcl.Mask;
+
+type
+  TFormCadastroPessoa1 = class(TFormCadastroPessoa)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadastroPessoa1: TFormCadastroPessoa1;
+
+implementation
+
+{$R *.dfm}
+
+end.

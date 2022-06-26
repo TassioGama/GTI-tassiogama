@@ -1,0 +1,9 @@
+inherited FormCadastroFuncionario: TFormCadastroFuncionario
+  Caption = 'Cadastro de Funcion'#225'rio'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Label3: TLabel
+    Width = 19
+    ExplicitWidth = 19
+  end
+end

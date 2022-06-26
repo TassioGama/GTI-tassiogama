@@ -1,0 +1,136 @@
+-- -----------------------------------------------------
+-- Schema is_petshop
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema is_petshop
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `is_petshop` DEFAULT CHARACTER SET utf8 ;
+USE `is_petshop` ;
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`rup`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`rup` (
+  `ID` INT(5) NOT NULL AUTO_INCREMENT,
+  `CPFCNPJ` VARCHAR(14) NULL,
+  `NOME` VARCHAR(60) NULL,
+  `RAZAOSOCIAL` VARCHAR(60) NULL,
+  `ENDERECO` VARCHAR(60) NULL,
+  `BAIRRO` VARCHAR(45) NULL,
+  `COMPLEMENTO` VARCHAR(45) NULL,
+  `NUM_ENDERECO` INT(5) NULL,
+  `CIDADE` VARCHAR(45) NULL,
+  `UF` VARCHAR(2) NULL,
+  `TELEFONE` VARCHAR(45) NULL,
+  `CELULAR` VARCHAR(45) NULL,
+  `DT_NASCIMENTO` DATE NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`setor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`setor` (
+  `IDSETOR` INT(5) NOT NULL,
+  `NOME` VARCHAR(45) NULL,
+  `DESCRICAO` VARCHAR(45) NULL,
+  PRIMARY KEY (`IDSETOR`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`funcao_setor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`funcao_setor` (
+  `IDFUNCAO_SETOR` INT NOT NULL,
+  `NOME` VARCHAR(45) NULL,
+  `DESCRICAO` VARCHAR(200) NULL,
+  `IDSETOR` INT(5) NOT NULL,
+  PRIMARY KEY (`IDFUNCAO_SETOR`, `IDSETOR`),
+  CONSTRAINT `fk_funcao_setor_setor`
+    FOREIGN KEY (`IDSETOR`)
+    REFERENCES `is_petshop`.`setor` (`IDSETOR`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`funcionarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`funcionarios` (
+  `IDFUNCIONARIO` INT NOT NULL,
+  `pis` VARCHAR(11) NULL,
+  `SALARIO` FLOAT NULL,
+  `DT_ADMISSAO` DATE NULL,
+  `IDFUNCAO_SETOR` INT NOT NULL,
+  `IDSETOR` INT(5) NOT NULL,
+  `ID` INT(5) NOT NULL,
+  PRIMARY KEY (`IDFUNCIONARIO`, `IDFUNCAO_SETOR`, `IDSETOR`, `ID`),
+  CONSTRAINT `fk_funcionarios_funcao_setor1`
+    FOREIGN KEY (`IDFUNCAO_SETOR` , `IDSETOR`)
+    REFERENCES `is_petshop`.`funcao_setor` (`IDFUNCAO_SETOR` , `IDSETOR`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_funcionarios_rup1`
+    FOREIGN KEY (`ID`)
+    REFERENCES `is_petshop`.`rup` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`produtos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`produtos` (
+  `IDPRODUTO` INT NOT NULL,
+  `NOME` VARCHAR(60) NULL,
+  `VALOR` FLOAT NULL,
+  `DESCRICAO` VARCHAR(60) NULL,
+  `MARCA` VARCHAR(60) NULL,
+  PRIMARY KEY (`IDPRODUTO`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`vendas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`vendas` (
+  `IDVENDAS` INT NOT NULL AUTO_INCREMENT,
+  `VALOR_VENDA` FLOAT NULL,
+  `VALOR_DESCONTO` FLOAT NULL,
+  `DT_VENDA` VARCHAR(45) NULL,
+  `ID` INT(5) NOT NULL,
+  PRIMARY KEY (`IDVENDAS`, `ID`),
+  CONSTRAINT `fk_vendas_rup1`
+    FOREIGN KEY (`ID`)
+    REFERENCES `is_petshop`.`rup` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `is_petshop`.`produto_vendas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `is_petshop`.`produto_vendas` (
+  `IDPRODUTO` INT NOT NULL,
+  `IDVENDAS` INT NOT NULL,
+  `ID` INT(5) NOT NULL,
+  `VALOR_VENDA` FLOAT NULL,
+  `QUANTIDADE` INT NULL,
+  PRIMARY KEY (`IDPRODUTO`, `IDVENDAS`, `ID`),
+  CONSTRAINT `fk_produtos_has_vendas_produtos1`
+    FOREIGN KEY (`IDPRODUTO`)
+    REFERENCES `is_petshop`.`produtos` (`IDPRODUTO`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_produtos_has_vendas_vendas1`
+    FOREIGN KEY (`IDVENDAS` , `ID`)
+    REFERENCES `is_petshop`.`vendas` (`IDVENDAS` , `ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;

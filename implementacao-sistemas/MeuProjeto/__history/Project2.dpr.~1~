@@ -1,0 +1,16 @@
+program Project2;
+
+uses
+  Vcl.Forms,
+  ProjetoPetShop in 'ProjetoPetShop.pas' {MenuPrincipal},
+  UnitCadastroPessoa in 'UnitCadastroPessoa.pas' {FormCadastroPessoa};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMenuPrincipal, MenuPrincipal);
+  Application.CreateForm(TFormCadastroPessoa, FormCadastroPessoa);
+  Application.Run;
+end.
