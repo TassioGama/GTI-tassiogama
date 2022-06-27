@@ -10,7 +10,8 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Response.Adapter,
   FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
-  FireDAC.Phys, FireDAC.VCLUI.Wait, FireDAC.DApt, Vcl.Buttons;
+  FireDAC.Phys, FireDAC.VCLUI.Wait, FireDAC.DApt, Vcl.Buttons, Vcl.Grids,
+  Vcl.DBGrids;
 
 type
   TFormCadastroPessoa = class(TForm)
@@ -47,6 +48,7 @@ type
     Label13: TLabel;
     InsertPessoa: TFDQuery;
     BitBtn1: TBitBtn;
+    DBGrid1: TDBGrid;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
   private
@@ -63,17 +65,47 @@ implementation
 Uses DbConection;
 
 {$R *.dfm}
-
 procedure TFormCadastroPessoa.BitBtn1Click(Sender: TObject);
+var
+cpf: string;
+cep: string;
+tel: string;
+cel: string;
 begin
   with InsertPessoa do
     begin
       close;
       sql.Clear;
-      sql.Add('insert into rup (CPFCNPJ,NOME,CEP,ENDERECO,BAIRRO,COMPLEMENTO,NUM_ENDERECO,CIDADE,UF,TELEFONE,CELULAR,DT_NASCIMENTO)');
+      sql.Add('insert into rup (CPF,NOME,CEP,ENDERECO,BAIRRO,COMPLEMENTO,NUM_ENDERECO,CIDADE,UF,TELEFONE,CELULAR,DT_NASCIMENTO)');
       sql.Add(' values (:cpf, :nome, :cep, :endereco, :bairro, :complemento, :numendereco, :cidade, :uf, :tel, :cel, :datnascimento)');
-      ParamByName('cpf').AsString := StringReplace(MaskEdit1.Text,'.','',[rfReplaceAll, rfIgnoreCase]);
+      cpf :=  StringReplace(MaskEdit1.Text,'.','',[rfReplaceAll, rfIgnoreCase]);
+      cpf :=  StringReplace(cpf,'-','',[rfReplaceAll, rfIgnoreCase]);
+      ParamByName('cpf').AsString := cpf;
+      ParamByName('nome').AsString := Edit1.Text;
+      cep := MaskEdit2.Text;
+      cep := StringReplace(cep,'-','',[rfReplaceAll, rfIgnoreCase]);
+      cep := Trim(cep);
+      ParamByName('cep').AsString := cep;
+      ParamByName('endereco').AsString := Edit3.Text;
+      ParamByName('bairro').AsString := Edit2.Text;
+      ParamByName('complemento').AsString := Edit5.Text;
+      ParamByName('numendereco').AsInteger := StrToInt(Edit4.Text);
+      ParamByName('cidade').AsString := Edit6.Text;
+      ParamByName('uf').AsString := Edit7.Text;
+      tel := StringReplace(MaskEdit3.Text,'(','',[rfReplaceAll, rfIgnoreCase]);
+      tel := StringReplace(tel,')','',[rfReplaceAll, rfIgnoreCase]);
+      tel := StringReplace(tel,'-','',[rfReplaceAll, rfIgnoreCase]);
+      ParamByName('tel').AsString := tel;
+      cel := StringReplace(MaskEdit4.Text,'(','',[rfReplaceAll, rfIgnoreCase]);
+      cel := StringReplace(cel,')','',[rfReplaceAll, rfIgnoreCase]);
+      cel := StringReplace(cel,'-','',[rfReplaceAll, rfIgnoreCase]);
+      ParamByName('cel').AsString := cel;
+      ParamByName('datnascimento').AsDate := StrToDate(MaskEdit5.Text);
       ExecSQL;
+    end;
+    with DataModule1.FDTPessoa do
+    begin
+      DataModule1.FDTPessoa.Refresh;
     end;
 
 end;

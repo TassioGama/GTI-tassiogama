@@ -1,5 +1,6 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 446
   Width = 574
   object FDConnection1: TFDConnection
@@ -23,5 +24,24 @@ object DataModule1: TDataModule1
     Provider = 'Forms'
     Left = 288
     Top = 32
+  end
+  object DSPessoa: TDataSource
+    DataSet = FDTPessoa
+    Left = 48
+    Top = 102
+  end
+  object FDTPessoa: TFDTable
+    IndexFieldNames = 'ID'
+    Connection = FDConnection1
+    TableName = 'is_petshop.rup'
+    Left = 120
+    Top = 102
+  end
+  object FDQPessoa: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from rup')
+    Left = 184
+    Top = 102
   end
 end

@@ -106,10 +106,6 @@
             <Form>FormCadastroPessoa</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UnitCadastroFuncionario.pas">
-            <Form>FormCadastroFuncionario</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="DbConection.pas">
             <Form>DataModule1</Form>
             <FormType>dfm</FormType>

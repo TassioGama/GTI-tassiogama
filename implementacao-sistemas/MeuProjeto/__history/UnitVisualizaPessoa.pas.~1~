@@ -1,0 +1,29 @@
+unit UnitVisualizaPessoa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitCadastroPessoa, REST.Types,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, REST.Response.Adapter,
+  Data.DB, FireDAC.Comp.DataSet, REST.Client, Data.Bind.Components,
+  Data.Bind.ObjectScope, Vcl.Buttons, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TFormCadastroPessoa1 = class(TFormCadastroPessoa)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadastroPessoa1: TFormCadastroPessoa1;
+
+implementation
+
+{$R *.dfm}
+
+end.

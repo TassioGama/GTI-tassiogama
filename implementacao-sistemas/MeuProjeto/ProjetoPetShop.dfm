@@ -18,10 +18,13 @@ object MenuPrincipal: TMenuPrincipal
     Left = 16
     Top = 72
     object Cadastro1: TMenuItem
-      Caption = 'Cadastro'
+      Caption = 'Cadastrar'
       object Rup1: TMenuItem
         Caption = 'Pessoa'
         OnClick = Rup1Click
+      end
+      object Funcionrio1: TMenuItem
+        Caption = 'Funcion'#225'rio'
       end
       object Produto1: TMenuItem
         Caption = 'Produto'
@@ -33,11 +36,28 @@ object MenuPrincipal: TMenuPrincipal
         Caption = 'Setor'
       end
     end
+    object Visualizar1: TMenuItem
+      Caption = 'Visualizar'
+      object Clientes1: TMenuItem
+        Caption = 'Clientes'
+      end
+      object Clientes2: TMenuItem
+        Caption = 'Funcion'#225'rios'
+      end
+      object Produtos1: TMenuItem
+        Caption = 'Produtos'
+      end
+      object Funo2: TMenuItem
+        Caption = 'Fun'#231#227'o'
+      end
+      object Funo3: TMenuItem
+        Caption = 'Setor'
+      end
+    end
     object Cadastro2: TMenuItem
-      Caption = 'Funcion'#225'rios'
+      Caption = 'Alterar'
       object Registrar1: TMenuItem
         Caption = 'Registrar'
-        OnClick = Registrar1Click
       end
       object Registrar2: TMenuItem
         Caption = 'Vinculo Setor'

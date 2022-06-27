@@ -2,8 +2,8 @@ object FormCadastroPessoa: TFormCadastroPessoa
   Left = 0
   Top = 0
   Caption = 'Cadastro '#218'nico de Pessoa'
-  ClientHeight = 479
-  ClientWidth = 685
+  ClientHeight = 513
+  ClientWidth = 731
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -93,7 +93,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Caption = 'Celular'
   end
   object Label12: TLabel
-    Left = 198
+    Left = 213
     Top = 205
     Width = 96
     Height = 13
@@ -131,6 +131,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Top = 56
     Width = 550
     Height = 21
+    CharCase = ecUpperCase
     TabOrder = 1
   end
   object Edit3: TEdit
@@ -138,6 +139,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Top = 112
     Width = 257
     Height = 21
+    CharCase = ecUpperCase
     TabOrder = 2
   end
   object MaskEdit2: TMaskEdit
@@ -155,6 +157,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Top = 112
     Width = 233
     Height = 21
+    CharCase = ecUpperCase
     TabOrder = 4
   end
   object Edit4: TEdit
@@ -169,6 +172,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Top = 168
     Width = 282
     Height = 21
+    CharCase = ecUpperCase
     TabOrder = 6
   end
   object Edit6: TEdit
@@ -176,6 +180,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Top = 168
     Width = 233
     Height = 21
+    CharCase = ecUpperCase
     TabOrder = 7
   end
   object Edit7: TEdit
@@ -183,6 +188,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Top = 168
     Width = 53
     Height = 21
+    CharCase = ecUpperCase
     TabOrder = 8
   end
   object Button1: TButton
@@ -207,7 +213,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
   object MaskEdit4: TMaskEdit
     Left = 113
     Top = 232
-    Width = 71
+    Width = 88
     Height = 21
     EditMask = '(99)99999-9999;1;_'
     MaxLength = 14
@@ -215,7 +221,7 @@ object FormCadastroPessoa: TFormCadastroPessoa
     Text = '(  )     -    '
   end
   object MaskEdit5: TMaskEdit
-    Left = 198
+    Left = 213
     Top = 232
     Width = 68
     Height = 21
@@ -233,22 +239,102 @@ object FormCadastroPessoa: TFormCadastroPessoa
     TabOrder = 13
     OnClick = BitBtn1Click
   end
+  object DBGrid1: TDBGrid
+    Left = 16
+    Top = 320
+    Width = 707
+    Height = 120
+    DataSource = DataModule1.DSPessoa
+    ReadOnly = True
+    TabOrder = 14
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CPF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOME'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CEP'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ENDERECO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'BAIRRO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'COMPLEMENTO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NUM_ENDERECO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CIDADE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TELEFONE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CELULAR'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DT_NASCIMENTO'
+        Visible = True
+      end>
+  end
   object RESTClient1: TRESTClient
     BaseURL = 'https://viacep.com.br/ws'
     Params = <>
-    Left = 24
-    Top = 368
+    Left = 608
+    Top = 456
   end
   object RESTRequest1: TRESTRequest
     Client = RESTClient1
     Params = <>
     Response = RESTResponse1
-    Left = 192
-    Top = 368
+    Left = 664
+    Top = 456
   end
   object RESTResponse1: TRESTResponse
-    Left = 104
-    Top = 368
+    Left = 640
+    Top = 456
   end
   object MemTable1: TFDMemTable
     FetchOptions.AssignedValues = [evMode]
@@ -258,19 +344,19 @@ object FormCadastroPessoa: TFormCadastroPessoa
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
-    Left = 24
-    Top = 424
+    Left = 680
+    Top = 456
   end
   object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
     Dataset = MemTable1
     FieldDefs = <>
     Response = RESTResponse1
-    Left = 320
-    Top = 368
+    Left = 624
+    Top = 456
   end
   object InsertPessoa: TFDQuery
     Connection = DataModule1.FDConnection1
-    Left = 520
-    Top = 272
+    Left = 96
+    Top = 456
   end
 end

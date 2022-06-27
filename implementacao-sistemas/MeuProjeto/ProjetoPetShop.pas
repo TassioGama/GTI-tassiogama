@@ -22,9 +22,15 @@ type
     Registro1: TMenuItem;
     Registro2: TMenuItem;
     Sair1: TMenuItem;
+    Visualizar1: TMenuItem;
+    Clientes1: TMenuItem;
+    Clientes2: TMenuItem;
+    Produtos1: TMenuItem;
+    Funo2: TMenuItem;
+    Funo3: TMenuItem;
+    Funcionrio1: TMenuItem;
     procedure Sair1Click(Sender: TObject);
     procedure Rup1Click(Sender: TObject);
-    procedure Registrar1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,12 +44,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitCadastroPessoa, UnitCadastroFuncionario;
-
-procedure TMenuPrincipal.Registrar1Click(Sender: TObject);
-begin
-FormCadastroFuncionario.Show();
-end;
+uses UnitCadastroPessoa;
 
 procedure TMenuPrincipal.Rup1Click(Sender: TObject);
 begin

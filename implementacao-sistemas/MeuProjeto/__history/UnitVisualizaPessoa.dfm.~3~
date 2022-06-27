@@ -1,0 +1,5 @@
+inherited FormCadastroPessoa1: TFormCadastroPessoa1
+  Caption = 'Lista de Pessoas Cadastradas'
+  PixelsPerInch = 96
+  TextHeight = 13
+end
