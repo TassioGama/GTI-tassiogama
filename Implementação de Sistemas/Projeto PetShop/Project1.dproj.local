@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/07/10 18:35:20.000.708,=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 18:37:52.000.442,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitLogin.pas=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 18:37:52.000.442,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitLogin.dfm=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/07/10 19:02:54.000.206,=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 19:03:15.000.169,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\DMPetShop.pas=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 19:03:15.000.169,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\DMPetShop.dfm=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/07/10 19:04:26.000.972,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\DMPetShop.pas=</Transaction>
+    <Transaction>2022/07/10 19:06:36.000.583,=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\DbConection.pas</Transaction>
+    <Transaction>2022/07/10 19:15:48.000.284,=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 19:16:00.000.288,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitPrincipal.dfm=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/07/10 19:16:00.000.288,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitPrincipal.pas=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 19:36:12.000.503,=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 19:36:24.000.422,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitCadastroPessoa.pas=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/10 19:36:24.000.422,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitCadastroPessoa.dfm=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/07/10 21:56:35.000.196,C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="UnitLogin.pas"/>
+    <File Path="UnitLogin.dfm"/>
+    <File Path="DbConection.pas"/>
+    <File Path="DbConection.dfm"/>
+    <File Path="UnitPrincipal.pas"/>
+    <File Path="UnitPrincipal.dfm"/>
+    <File Path="UnitCadastroPessoa.pas"/>
+    <File Path="UnitCadastroPessoa.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,36 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 446
+  Width = 574
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=is_petshop'
+      'User_Name=root'
+      'DriverID=MySQL')
+    LoginPrompt = False
+    Left = 56
+    Top = 32
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\Users\tassi\OneDrive\Documentos\Embarcadero\Studio\Projects\W' +
+      'in32\Debug\libmysql.dll'
+    Left = 168
+    Top = 32
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 288
+    Top = 32
+  end
+  object FDTPessoa: TFDTable
+    Connection = FDConnection1
+    Left = 56
+    Top = 128
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 120
+    Top = 128
+  end
+end
