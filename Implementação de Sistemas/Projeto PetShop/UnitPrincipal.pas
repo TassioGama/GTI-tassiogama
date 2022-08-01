@@ -21,6 +21,8 @@ type
     Sair1: TMenuItem;
     Pessoa2: TMenuItem;
     procedure Pessoa2Click(Sender: TObject);
+    procedure Funo2Click(Sender: TObject);
+    procedure Pessoa1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +36,17 @@ implementation
 
 {$R *.dfm}
 
-uses UnitCadastroPessoa;
+uses UnitCadastroPessoa, UnitCadastroProdutos, UnitCadastroFuncionario;
+
+procedure TFormPrincipal.Funo2Click(Sender: TObject);
+begin
+FormCadastroProduto.ShowModal;
+end;
+
+procedure TFormPrincipal.Pessoa1Click(Sender: TObject);
+begin
+FormCadastroFuncionario.ShowModal;
+end;
 
 procedure TFormPrincipal.Pessoa2Click(Sender: TObject);
 begin

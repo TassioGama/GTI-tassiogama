@@ -18,6 +18,10 @@ type
     FDTPessoa: TFDTable;
     FDQuery1: TFDQuery;
     DSPessoa: TDataSource;
+    FDTProdutos: TFDTable;
+    DSProdutos: TDataSource;
+    FDQFuncionarios: TFDQuery;
+    DSFuncionarios: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

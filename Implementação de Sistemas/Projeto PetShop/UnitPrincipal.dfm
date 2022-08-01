@@ -21,6 +21,7 @@ object FormPrincipal: TFormPrincipal
       Caption = 'Cadastro'
       object Pessoa1: TMenuItem
         Caption = 'Funcion'#225'rio'
+        OnClick = Pessoa1Click
       end
       object Funo1: TMenuItem
         Caption = 'Fun'#231#227'o'
@@ -31,6 +32,7 @@ object FormPrincipal: TFormPrincipal
       end
       object Funo2: TMenuItem
         Caption = 'Produto'
+        OnClick = Funo2Click
       end
       object Setor1: TMenuItem
         Caption = 'Setor'

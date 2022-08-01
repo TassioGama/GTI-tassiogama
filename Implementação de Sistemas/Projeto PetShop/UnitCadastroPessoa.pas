@@ -55,6 +55,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,7 +86,7 @@ DataModule1.FDTPessoa.Open;
     cpf :=  StringReplace(MaskEdit1.Text,'.','',[rfReplaceAll, rfIgnoreCase]);
     cpf :=  StringReplace(cpf,'-','',[rfReplaceAll, rfIgnoreCase]);
     ParamByName('cpf').AsString := cpf;
-  if FDQPesquisa.RecordCount > 0 then
+  if FDQPesquisa.RecordCount = 0 then
     begin
     with InsertPessoa do
       begin
@@ -119,15 +120,28 @@ DataModule1.FDTPessoa.Open;
         ExecSQL;
       end;
       //limpar os campos aqui receber vazio
+      MaskEdit1.Text := '';
+      MaskEdit2.Text := '';
+      MaskEdit3.Text := '';
+      MaskEdit4.Text := '';
+      MaskEdit5.Text := '';
+      Edit1.Text := '';
+      Edit2.Text := '';
+      Edit3.Text := '';
+      Edit4.Text := '';
+      Edit5.Text := '';
+      Edit6.Text := '';
+      Edit7.Text := '';
     end
     else
       ShowMessage('CPF já Cadastrado!');
       exit;
   end;
-    with DataModule1.FDTPessoa do
-    begin
-      DataModule1.FDTPessoa.Refresh;
-    end;
+
+  DataModule1.FDTPessoa.Close;
+  DataModule1.DSPessoa.DataSet.Refresh;
+  DataModule1.FDTPessoa.Refresh;
+  DataModule1.FDTPessoa.Open;
 
 end;
 
@@ -217,6 +231,11 @@ begin
    end;
 
 
+end;
+
+procedure TFormCadastroPessoa.FormCreate(Sender: TObject);
+begin
+DataModule1.FDTPessoa.Open;
 end;
 
 end.
